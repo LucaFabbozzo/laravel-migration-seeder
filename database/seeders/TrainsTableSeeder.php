@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Train;
+use Faker\Generator as Faker;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -13,9 +14,10 @@ class TrainsTableSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(Faker $faker)
     {
-        $new_train = new Train();
+        for($i=0; $i < 10; $i++) {
+             $new_train = new Train();
             // $table->string('azienda', 15);
             // $table->string('stazione_di_partenza');
             // $table->time('orario_di_partenza', $precision = 0);
@@ -24,16 +26,18 @@ class TrainsTableSeeder extends Seeder
             // $table->tinyInteger('numero_carrozze')->unsigned();
             // $table->boolean('in_orario')->default(0);
             // $table->boolean('cancellato')->default(0);
-        $new_train->azienda = "Trenord";
-        $new_train->stazione_di_partenza = "Como Borghi";
-        $new_train->orario_di_partenza = "08:30";
-        $new_train->orario_di_arrivo = "09:00";
-        $new_train->codice_treno = "345";
-        $new_train->numero_carrozze = 8;
-        $new_train->in_orario = 0;
-        $new_train->cancellato = 1;
+        $new_train->azienda = $faker->word();
+        $new_train->stazione_di_partenza = $faker->word();
+        $new_train->orario_di_partenza = $faker->time();
+        $new_train->orario_di_arrivo = $faker->time();
+        $new_train->codice_treno = $faker->numberBetween(100, 1000);
+        $new_train->numero_carrozze = $faker->numberBetween(0, 20);
+        $new_train->in_orario = $faker->numberBetween(0, 1);
+        $new_train->cancellato = $faker->numberBetween(0, 1);
 
         $new_train->save();
+
+        }
 
 
     }
