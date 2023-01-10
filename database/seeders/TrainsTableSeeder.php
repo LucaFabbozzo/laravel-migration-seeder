@@ -28,6 +28,7 @@ class TrainsTableSeeder extends Seeder
             // $table->boolean('cancellato')->default(0);
         $new_train->azienda = $faker->word();
         $new_train->stazione_di_partenza = $faker->word();
+        $new_train->stazione_di_arrivo = $faker->word();
         $new_train->orario_di_partenza = $faker->time();
         $new_train->orario_di_arrivo = $faker->time();
         $new_train->codice_treno = $faker->numberBetween(100, 1000);

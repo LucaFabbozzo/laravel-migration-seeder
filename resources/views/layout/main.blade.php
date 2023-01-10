@@ -38,7 +38,6 @@ Stampare a video tutti i treni inseriti --}}
 
     @yield('content')
 
-    @include('partials.footer')
 
 </body>
 
