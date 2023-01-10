@@ -26,12 +26,12 @@ return new class extends Migration
             // Cancellato
             $table->string('azienda', 15);
             $table->string('stazione_di_partenza');
-            $table->dateTime('orario_di_partenza', $precision = 0);
-            $table->dateTime('orario_di_arrivo', $precision = 0);
+            $table->time('orario_di_partenza', $precision = 0);
+            $table->time('orario_di_arrivo', $precision = 0);
             $table->string('codice_treno', 10);
             $table->tinyInteger('numero_carrozze')->unsigned();
-            $table->boolean('in_orario');
-            $table->boolean('cancellato');
+            $table->boolean('in_orario')->default(0);
+            $table->boolean('cancellato')->default(0);
             $table->timestamps();
         });
     }
