@@ -16,29 +16,29 @@ Cancellato --}}
         <table class="table">
   <thead>
     <tr>
-      <th scope="col">Azienda</th>
-      <th scope="col">Stazione di Partenza</th>
-      <th scope="col">Stazione di Arrivo</th>
-      <th scope="col">Orario di Partenza</th>
-      <th scope="col">Orario di Arrivo</th>
-      <th scope="col">Codice Treno</th>
-      <th scope="col">Numero Carrozze</th>
-      <th scope="col">In Orario</th>
-      <th scope="col">Cancellato</th>
+      <th scope="col">Company</th>
+      <th scope="col">Departure Station</th>
+      <th scope="col">Arrival Station</th>
+      <th scope="col">Departure Time</th>
+      <th scope="col">Arrival Time</th>
+      <th scope="col">Train Code</th>
+      <th scope="col">Number of Wagon</th>
+      <th scope="col">In Time</th>
+      <th scope="col">Deleted</th>
     </tr>
   </thead>
   <tbody>
     @foreach ($trains as $train)
     <tr>
-      <th scope="row">{{$train->azienda}}</th>
-      <td>{{$train->stazione_di_partenza}}</td>
-      <td>{{$train->stazione_di_arrivo}}</td>
-      <td>{{$train->orario_di_partenza}}</td>
-      <td>{{$train->orario_di_arrivo}}</td>
-      <td>{{$train->codice_treno}}</td>
-      <td>{{$train->numero_carrozze}}</td>
-      <td>{{$train->in_orario}}</td>
-      <td>{{$train->cancellato}}</td>
+      <th scope="row">{{$train->company}}</th>
+      <td>{{$train->departure_station}}</td>
+      <td>{{$train->arrival_station}}</td>
+      <td>{{$train->departure_time}}</td>
+      <td>{{$train->arrival_time}}</td>
+      <td>{{$train->train_code}}</td>
+      <td>{{$train->number_of_wagon}}</td>
+      <td>{{$train->in_time}}</td>
+      <td>{{$train->deleted}}</td>
     </tr>
     @endforeach
   </tbody>

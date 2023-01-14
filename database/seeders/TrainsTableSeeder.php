@@ -18,23 +18,24 @@ class TrainsTableSeeder extends Seeder
     {
           for($i=0; $i < 10; $i++) {
              $new_train = new Train();
-            // $table->string('azienda', 15);
-            // $table->string('stazione_di_partenza');
-            // $table->time('orario_di_partenza', $precision = 0);
-            // $table->time('orario_di_arrivo', $precision = 0);
-            // $table->string('codice_treno', 10);
-            // $table->tinyInteger('numero_carrozze')->unsigned();
-            // $table->boolean('in_orario')->default(0);
-            // $table->boolean('cancellato')->default(0);
-        $new_train->azienda = $faker->word();
-        $new_train->stazione_di_partenza = $faker->word();
-        $new_train->stazione_di_arrivo = $faker->word();
-        $new_train->orario_di_partenza = $faker->time();
-        $new_train->orario_di_arrivo = $faker->time();
-        $new_train->codice_treno = $faker->numberBetween(100, 1000);
-        $new_train->numero_carrozze = $faker->numberBetween(0, 20);
-        $new_train->in_orario = $faker->numberBetween(0, 1);
-        $new_train->cancellato = $faker->numberBetween(0, 1);
+            //  $table->string('company', 15);
+            //  $table->string('departure_station');
+            //  $table->string('arrival_station');
+            //  $table->time('departure_time', $precision = 0);
+            //  $table->time('arrival_time', $precision = 0);
+            //  $table->string('train_code', 10);
+            //  $table->tinyInteger('number_of_wagon')->unsigned();
+            //  $table->boolean('in_time')->default(0);
+            //  $table->boolean('deleted')->default(0);
+        $new_train->company = $faker->word();
+        $new_train->departure_station = $faker->word();
+        $new_train->arrival_station = $faker->word();
+        $new_train->departure_time = $faker->time();
+        $new_train->arrival_time = $faker->time();
+        $new_train->train_code = $faker->bothify('#####');
+        $new_train->number_of_wagon = $faker->numberBetween(0, 20);
+        $new_train->in_time = $faker->numberBetween(0, 1);
+        $new_train->deleted = $faker->numberBetween(0, 1);
         $new_train->save();
     }
     }
